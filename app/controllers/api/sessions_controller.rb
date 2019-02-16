@@ -18,7 +18,7 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
-      redirect_to root_url
+      render json: {}
     else
       render(json: ["Nobody signed in"], status: 404)
     end
