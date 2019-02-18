@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const mapStateToProps = (state, ownProps) => ({
   errors: state.errors.session,
   formType: "login",
-  navLink: <Link to="/login">Login instead</Link>
+  navLink: <Link to="/signup">Signup instead</Link>
 });
 const mapDispatchToProps = (dispatch, ownProps) => ({
   processForm: user => dispatch(login(user))
