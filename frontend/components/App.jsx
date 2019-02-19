@@ -15,7 +15,6 @@ const App = () => {
         <h1>Bench BnB</h1>
         <GreetingContainer />
       </header>
-
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <Route exact path="/" component={BenchIndexContainer} />
