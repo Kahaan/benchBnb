@@ -1,4 +1,5 @@
 import React from "react";
+import BenchIndexItem from "./bench_index_item";
 
 class BenchIndex extends React.Component {
   constructor(props) {
@@ -24,7 +25,11 @@ class BenchIndex extends React.Component {
     return (
       <div>
         <h1>Bench index component</h1>
-        <ul>{benchKeys.map(key => benches[key].id)}</ul>
+        <ul>
+          {benchKeys.map(key => (
+            <BenchIndexItem key={key} bench={benches[key]} />
+          ))}
+        </ul>
       </div>
     );
   }
