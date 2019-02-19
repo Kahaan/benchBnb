@@ -10,17 +10,21 @@ class BenchIndex extends React.Component {
 
   componentDidMount() {
     const benches = this.props.fetchBenches();
-    this.setState({ benches });
+    this.setState({ benches: this.props.benches });
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.benches !== this.props.benches)
+      this.setState({ benches: this.props.benches });
   }
 
   render() {
-    const benches = this.state.benches || { 1: "" };
+    const benches = this.props.benches;
+    const benchKeys = Object.keys(benches);
     return (
       <div>
         <h1>Bench index component</h1>
-        {Object.keys(benches).map(key => (
-          <li>{this.state.benches[key]}</li>
-        ))}
+        <ul>{benchKeys.map(key => benches[key].id)}</ul>
       </div>
     );
   }
