@@ -18,7 +18,9 @@ class BenchIndex extends React.Component {
     return (
       <div>
         <h1>Bench index component</h1>
-        {this.state.benches}
+        {Object.keys(benches).map(key => (
+          <li>{this.state.benches[key]}</li>
+        ))}
       </div>
     );
   }
