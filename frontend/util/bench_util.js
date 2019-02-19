@@ -1,6 +1,5 @@
-export const fetchBenches = data =>
+export const fetchBenches = () =>
   $.ajax({
     method: "GET",
-    url: "api/benches",
-    data
+    url: "api/benches"
   });
