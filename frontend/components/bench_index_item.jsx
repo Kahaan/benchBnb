@@ -10,6 +10,7 @@ class BenchIndexItem extends React.Component {
       <div className="BenchIndexItem">
         <h4>{this.props.bench.id}</h4>
         <h4>{this.props.bench.description}</h4>
+        <br />
       </div>
     );
   }
