@@ -14,6 +14,11 @@ class BenchMap extends React.Component {
     const map = this.refs.map;
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager.updateMarkers(this.props.benches);
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    this.MarkerManager.updateMarkers(this.props.benches);
   }
 
   render() {
