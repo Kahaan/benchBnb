@@ -10,14 +10,19 @@ class BenchMap extends React.Component {
       center: { lat: 37.7758, lng: -122.435 },
       zoom: 13
     };
-
+    const map = this.refs.map;
     this.map = new google.maps.Map(this.mapNode, mapOptions);
   }
 
   render() {
     return (
-      <div id="map-container" ref="map">
-        map
+      <div>
+        <div>
+          <div id="map-container" ref="map" />
+        </div>
+        <div>
+          <div ref={map => (this.mapNode = map)} />
+        </div>
       </div>
     );
   }
