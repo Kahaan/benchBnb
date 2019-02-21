@@ -1,4 +1,5 @@
 import React from "react";
+import MarkerManager from "../../util/marker_manager.js";
 
 class BenchMap extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class BenchMap extends React.Component {
     };
     const map = this.refs.map;
     this.map = new google.maps.Map(this.mapNode, mapOptions);
+    this.MarkerManager = new MarkerManager(this.map);
   }
 
   render() {
