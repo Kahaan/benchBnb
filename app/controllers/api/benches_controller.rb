@@ -1,6 +1,6 @@
 class Api::BenchesController < ApplicationController
   def index
-    @benches = Bench.all
+    @benches = bounds ? Bench.in_bounds(bounds) : Bench.all
   end
 
   def create
