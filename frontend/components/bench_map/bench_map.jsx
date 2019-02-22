@@ -32,6 +32,18 @@ class BenchMap extends React.Component {
       };
       this.props.updateBounds(bounds);
     });
+
+    google.maps.event.addListener(this.map, "click", event => {
+      const coords = getCoordsObj(event.latLng);
+      this.handleClick(coords);
+    });
+  }
+
+  handleClick(coords) {
+    this.props.history.push({
+      pathname: "benches/new",
+      search: `lat=${coords.lat}&lng=${coords.lng}`
+    });
   }
 
   render() {
