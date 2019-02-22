@@ -4,11 +4,10 @@ import { withRouter } from "react-router";
 class BenchForm extends React.Component {
   constructor(props) {
     super(props);
+    this.coords = { lat: props.lat, lng: props.lng };
     this.state = {
       description: "",
-      seating: 2,
-      latitude: "",
-      longitude: ""
+      seating: 2
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToSearch = this.navigateToSearch.bind(this);
@@ -31,15 +30,16 @@ class BenchForm extends React.Component {
     formData.append("bench[description]", this.state.description);
     formData.append("bench[seating]", this.state.seating);
 
-    formData.append("bench[latitude]", this.state.latitude);
-    formData.append("bench[longitude]", this.state.longitude);
+    formData.append("bench[lat]", this.coords[lat]);
+    formData.append("bench[lng]", this.coords[lng]);
 
     this.props.createBench(formData);
     this.navigateToSearch();
   }
 
   render() {
-    const { description, seating, latitude, longitude } = this.state;
+    const { description, seating } = this.state;
+    const { lat, lng } = this.coords;
 
     return (
       <div className="new-bench-container">
@@ -65,10 +65,10 @@ class BenchForm extends React.Component {
             />
 
             <label className="bench-field">Latitude</label>
-            <input type="text" value={latitude} className="bench-field" />
+            <input type="text" disabled value={lat} className="bench-field" />
 
             <label className="bench-field">Longitude</label>
-            <input type="text" value={longitude} className="bench-field" />
+            <input type="text" disabled value={lng} className="bench-field" />
 
             <div className="button-holder">
               <input
