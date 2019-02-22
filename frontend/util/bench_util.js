@@ -4,3 +4,12 @@ export const fetchBenches = filters =>
     url: "api/benches",
     filters
   });
+
+export const createBench = benchForm =>
+  $.ajax({
+    method: "POST",
+    url: "api/benches",
+    data: benchForm,
+    contentType: false,
+    processData: false
+  });
