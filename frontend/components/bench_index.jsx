@@ -10,7 +10,6 @@ class BenchIndex extends React.Component {
   }
 
   componentDidMount() {
-    const benches = this.props.fetchBenches();
     this.setState({ benches: this.props.benches });
   }
 
