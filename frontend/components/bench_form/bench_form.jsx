@@ -11,6 +11,11 @@ class BenchForm extends React.Component {
       longitude: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.navigateToSearch = this.navigateToSearch.bind(this);
+  }
+
+  navigateToSearch() {
+    this.props.history.push("/");
   }
 
   update(property) {
