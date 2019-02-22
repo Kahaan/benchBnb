@@ -2,6 +2,11 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import MarkerManager from "../../util/marker_manager.js";
 
+const getCoordsObj = latLng => ({
+  lat: latLng.lat(),
+  lng: latLng.lng()
+});
+
 class BenchMap extends React.Component {
   constructor(props) {
     super(props);
