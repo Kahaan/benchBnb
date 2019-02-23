@@ -30,8 +30,8 @@ class BenchForm extends React.Component {
     formData.append("bench[description]", this.state.description);
     formData.append("bench[seating]", this.state.seating);
 
-    formData.append("bench[lat]", this.coords[lat]);
-    formData.append("bench[lng]", this.coords[lng]);
+    formData.append("bench[lat]", this.coords["lat"]);
+    formData.append("bench[lng]", this.coords["lng"]);
 
     this.props.createBench(formData);
     this.navigateToSearch();
