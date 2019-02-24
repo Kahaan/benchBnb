@@ -2,8 +2,6 @@ import { combineReducers } from "redux";
 
 import filters from "./filters_reducer";
 
-const uiReducer = combineReducers({
+export default combineReducers({
   filters
 });
-
-export default uiReducer;
