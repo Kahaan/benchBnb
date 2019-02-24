@@ -6,7 +6,7 @@ class Api::BenchesController < ApplicationController
      benches = benches.where(seating: seating_range)
    end
 
-      @benches = Bench.all
+      @benches = benches
       render :index
   end
 
