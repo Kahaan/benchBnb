@@ -2,15 +2,16 @@ import { connect } from "react-redux";
 import React from "react";
 import Search from "./search";
 import { fetchBenches } from "../../actions/bench_actions";
-import { updateBounds } from "../../actions/filter_actions";
+import { updateFilter } from "../../actions/filter_actions";
 import { asArray } from "../../reducers/selectors";
 
 const mapStateToProps = state => ({
-  benches: asArray(state.entities)
+  benches: asArray(state.entities),
+  minSeating: state.ui.filters.minSeating,
+  maxSeating: state.ui.filters.maxSeating
 });
 const mapDispatchToProps = dispatch => ({
-  fetchBenches: () => dispatch(fetchBenches()),
-  updateBounds: bounds => dispatch(updateBounds(bounds))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
 });
 
 export default connect(
