@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import filters from "./filter_reducer";
+import filters from "./filters_reducer";
 
 const uiReducer = combineReducers({
   filters

@@ -7,7 +7,7 @@ const defaultFilters = Object.freeze({
   maxSeating: 10
 });
 
-const filterReducer = (state = defaultFilters, action) => {
+const filtersReducer = (state = defaultFilters, action) => {
   Object.freeze(state);
   switch (action.type) {
     case UPDATE_FILTER:
@@ -20,4 +20,4 @@ const filterReducer = (state = defaultFilters, action) => {
   }
 };
 
-export default filterReducer;
+export default filtersReducer;
