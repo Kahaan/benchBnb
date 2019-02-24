@@ -35,7 +35,7 @@ class BenchMap extends React.Component {
         northEast: { lat: north, lng: east },
         southWest: { lat: south, lng: west }
       };
-      this.props.updateBounds(bounds);
+      this.props.updateFilter("bounds", bounds);
     });
 
     google.maps.event.addListener(this.map, "click", event => {
