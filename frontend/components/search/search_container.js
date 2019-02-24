@@ -1,7 +1,6 @@
 import { connect } from "react-redux";
 import React from "react";
 import Search from "./search";
-import { fetchBenches } from "../../actions/bench_actions";
 import { updateFilter } from "../../actions/filter_actions";
 import { asArray } from "../../reducers/selectors";
 
