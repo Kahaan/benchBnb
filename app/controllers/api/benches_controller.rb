@@ -13,7 +13,7 @@ class Api::BenchesController < ApplicationController
   def create
     @bench = Bench.new(bench_params)
     if @bench.save!
-      render :index
+      render 'index'
     else
       render json: @bench.errors.full_messages
     end
